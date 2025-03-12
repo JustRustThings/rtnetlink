@@ -60,7 +60,6 @@ impl RouteGetRequest {
         let mut req =
             NetlinkMessage::from(RouteNetlinkMessage::GetRoute(message));
         req.header.flags = NLM_F_REQUEST;
-
         if !has_dest {
             req.header.flags |= NLM_F_DUMP;
         }
